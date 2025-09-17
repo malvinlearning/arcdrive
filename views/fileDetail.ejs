@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>File Details</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <h1>File Details</h1>
+
+  <div class="details-card">
+    <p><strong>Name:</strong> <%= file.name %></p>
+    <p><strong>Size:</strong> <%= file.size %> bytes</p>
+    <p><strong>Uploaded At:</strong> <%= file.uploadedAt.toLocaleString() %></p>
+  </div>
+
+  <div class="files-button">
+    <a href="/folders/<%= folderId %>/files/<%= file.id %>/download">
+        <button>Download</button>
+    </a>
+
+    <form method="POST" action="/folders/<%= folderId %>/files/<%= file.id %>/delete" class="mt-2">
+        <button type="submit">Delete</button>
+    </form>
+  </div>
+  
+
+  <div class="mt-4">
+    <a href="/folders/<%= folderId %>">← Back to Folder</a>
+  </div>
+</body>
+</html>

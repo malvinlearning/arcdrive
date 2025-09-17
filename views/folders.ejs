@@ -1,28 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Folders</title>
+  <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-    <h1>Your Folders</h1>
-    <form method="POST" action="/folders">
-        <input type="text" name="name" placeholder="New Folder" required />
-        <button type="submit">Create</button>
-    </form>
+  <h1>Your Folders</h1>
 
-    <ul>
+  <form method="POST" action="/folders">
+    <input type="text" name="name" placeholder="New Folder" required />
+    <button type="submit">Create</button>
+  </form>
+
+  <ul>
     <% folders.forEach(folder => { %>
-        <li>
-        <a href="/folders/<%= folder.id %>"><%= folder.name %></a>
-        (<%= folder.files.length %> files)
-        <form method="POST" action="/folders/<%= folder.id %>/delete" style="display:inline;">
-            <button type="submit">Delete</button>
+      <li>
+        <span>
+          <a href="/folders/<%= folder.id %>"><%= folder.name %></a>
+          (<%= folder.files.length %> files)
+        </span>
+        <form method="POST" action="/folders/<%= folder.id %>/delete">
+          <button type="submit">Delete</button>
         </form>
-        </li>
+      </li>
     <% }) %>
-    </ul>
-
+  </ul>
 </body>
 </html>

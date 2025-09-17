@@ -1,0 +1,131 @@
+/* ==== Global Styles ==== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+  background: #f4f6f9;
+  color: #2c3e50;
+  padding: 2rem;
+  max-width: 800px;
+  margin: auto;
+  line-height: 1.6;
+}
+
+/* ==== Typography ==== */
+h1, h2 {
+  color: #1a202c;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 2rem;
+  border-bottom: 2px solid #e2e8f0;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+h2 {
+  font-size: 1.4rem;
+  margin-top: 2rem;
+}
+
+/* ==== Forms ==== */
+form {
+  margin: 1rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="file"] {
+  padding: 0.6rem;
+  border: 1px solid #cbd5e0;
+  border-radius: 6px;
+  flex: 1;
+  min-width: 200px;
+}
+
+button {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.2s ease-in-out;
+}
+
+button:hover {
+  background: #1d4ed8;
+}
+
+a {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ==== Lists ==== */
+ul {
+  list-style: none;
+  margin-top: 1rem;
+}
+
+li {
+  background: white;
+  padding: 0.8rem 1rem;
+  margin-bottom: 0.6rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+li form {
+  margin: 0;
+}
+
+li a {
+  font-weight: 600;
+}
+
+/* ==== Cards (Details Pages) ==== */
+.details-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  margin-bottom: 2rem;
+}
+
+.details-card p {
+  margin-bottom: 0.5rem;
+}
+
+/* ==== Utility ==== */
+.center {
+  text-align: center;
+}
+
+.mt-2 { margin-top: 1rem; }
+.mt-4 { margin-top: 2rem; }
+
+.files-button {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 10px;
+}

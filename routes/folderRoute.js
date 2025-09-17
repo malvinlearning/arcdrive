@@ -27,4 +27,8 @@ routes.post("/:id/delete", folderController.deleteFolder);
 routes.post("/:id/files", upload.single("file"), fileController.uploadFile);
 routes.post("/:folderId/files/:fileId/delete", fileController.deleteFile);
 
+routes.get("/:folderId/files/:fileId", fileController.getFileDetails);
+routes.get("/:folderId/files/:fileId/download", fileController.downloadFile);
+
+
 module.exports = routes;
