@@ -8,6 +8,7 @@ const {PrismaClient} = require('./generated/prisma');
 const { PrismaSessionStore } = require('@quixo3/prisma-session-store');
 const passport = require('./authentications/passAuth');
 const routes = require('./routes/baseRoute');
+const folderRoutes = require('./routes/folderRoute');
 const { env } = require('node:process');
 
 const app = express();
@@ -38,6 +39,7 @@ app.use(passport.session());
 app.use(express.urlencoded({ extended: true }));
 
 app.use("/", routes);
+app.use("/folder", folderRoutes);
 
 
 const PORT = process.env.PORT || 3000;

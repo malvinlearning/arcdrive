@@ -7,23 +7,25 @@ const prisma = new PrismaClient();
 
 module.exports = {
     getMainPage: (req, res) => {
-        res.render("mainPage");
+        res.render("mainPage", {user: req.user});
     },
 
     getLoginPage: (req, res) => {
-
+        if(req.user) {
+            return res.redirect("/");
+        }
         res.render("loginPage");
     },
 
     postLogin: (req, res, next) => {
-        require("passport").authenticate("local", {
+        passport.authenticate("local", {
             successRedirect: "/",
             failureRedirect: "/login",
         })
     (req, res, next);
 },
 
-    getLogout: (req, res, next) => {
+    postLogout: (req, res, next) => {
         req.logout(err => {
             if (err) return next(err);
             res.redirect("/");
