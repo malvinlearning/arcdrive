@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Folder: <%= folder.name %></h1>
+    <form method="POST" action="/folders/<%= folder.id %>/update">
+        <input type="text" name="name" value="<%= folder.name %>" />
+        <button type="submit">Rename</button>
+    </form>
+
+    <h2>Files</h2>
+    <form method="POST" action="/folders/<%= folder.id %>/files" enctype="multipart/form-data">
+        <input type="file" name="file" required />
+        <button type="submit">Upload</button>
+    </form>
+
+    <ul>
+        <% folder.files.forEach(file => { %>
+            <li>
+                <%= file.name %> (<%= file.size %> bytes)
+                <form method="POST" action="/folders/<%= folder.id %>/files/<%= file.id %>/delete" style="display:inline;">
+                    <button type="submit">Delete</button>
+                </form>
+            </li>
+        <% }) %>
+    </ul>
+
+</body>
+</html>

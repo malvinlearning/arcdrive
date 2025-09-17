@@ -39,7 +39,7 @@ app.use(passport.session());
 app.use(express.urlencoded({ extended: true }));
 
 app.use("/", routes);
-app.use("/folder", folderRoutes);
+app.use("/folders", folderRoutes);
 
 
 const PORT = process.env.PORT || 3000;
