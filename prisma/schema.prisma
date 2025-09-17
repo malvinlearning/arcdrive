@@ -51,4 +51,5 @@ model File {
   uploadedAt DateTime @default(now())
   Folder     Folder?  @relation(fields: [folderId], references: [id])
   folderId   Int?
+  publicId   String?
 }
